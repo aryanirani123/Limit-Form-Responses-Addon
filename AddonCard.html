@@ -1,0 +1,25 @@
+<!-- This is the HTML code that Builds the Card for the Addon -->
+
+
+<div class="sidebar">
+  <div class="block form-group">
+    <p><b> Limit Form Responses</b></p>
+    <input type="number" id="max_responses" name="max_responses" placeholder="Enter Max Responses"/>
+    <button class="blue" id="load_responses" onclick="openResponseWindow"> Set Limit </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  function openResponseWindow(){
+
+    const maxVal = document.getElementById("max_responses").value;
+    google.script.run.limit_responses(maxVal);
+    Logger.log("The function has been invoked")
+  }
+
+
+  </script>
